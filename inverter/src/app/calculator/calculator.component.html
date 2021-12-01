@@ -1,37 +1,43 @@
 <div class="container-fluid bg-light">
     <div class="container-fluid parent">
-        <div class="row">
+        <div class="row ">
+            <div class="col-4"></div>
             <div class="col">
-                <label>Expense Calculator</label>
+               <h1>Expense Calculator</h1>
             </div>
+            <div class="col-4"></div>
         </div>
         <div class="row my-5">
-            <div class="col-6">
-                <form>
+            <div class="col-8">
+                <form [formGroup]="newExpenseForm" (ngSubmit)="calculate()">
                     <div class="row align-items-center g-3">
                         <div class="col-auto imput-group">
-                            <label class="visually-hidden" for="inputEmail">Funds</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Funds added">
+                            <label class="visually-hidden" for="Funds">Funds</label>
+                            <i class="fa fa-solid fa-indian-rupee-sign"></i>
+                            <input type="number" class="form-control" id="Funds" placeholder="Funds added" formControlName="addedFunds">
                         </div>
                         <div class="col-auto">
-                            <label class="visually-hidden" for="inputPassword">Investment balance</label>
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Invest. balance">
+                            <label class="visually-hidden" for="Date">Date</label>
+                            <input type="date" class="form-control" id="Date" placeholder="Invest. balance" formControlName="date">
                         </div>
                         <div class="col-auto">
                             <div class="input-group">
                                 <select class="form-select">
                                     <option selected>Choose...</option>
+                                    <option>100</option>
+                                    <option>200</option>
+                                    <option>300</option>
                                     <option>500</option>
                                     <option>600</option>
                                     <option>1000</option>
                                 </select>
                             </div>
                         </div>
-                       
+
                     </div>
                     <div class="row align-items-center my-3">
                         <div class="col-auto">
-                            <button type="submit" class="btn btn-primary">Sign in</button>
+                            <button type="submit" class="btn btn-info">Sign in</button>
                         </div>
                     </div>
                 </form>
@@ -39,3 +45,4 @@
             <div class="col-auto"></div>
         </div>
     </div>
+</div>
